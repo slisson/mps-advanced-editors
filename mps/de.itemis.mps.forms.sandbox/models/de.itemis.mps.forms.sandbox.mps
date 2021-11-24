@@ -32,7 +32,7 @@
       <property role="kiJMy" value="Sascha Lisson" />
       <property role="kiJMG" value="14.09.1987" />
       <node concept="1dj1mE" id="5fk$COuAofT" role="kiJHN">
-        <property role="1dsgN4" value="0" />
+        <property role="1dsgN4" value="2" />
         <node concept="kiJMF" id="5fk$COuC$tj" role="1dj0se">
           <property role="1dtHnj" value="70565" />
           <property role="1dtHnI" value="Stuttgart" />
@@ -46,12 +46,15 @@
         <node concept="kiJMF" id="5fk$COuHm8Y" role="1dj0se">
           <property role="1dtHnj" value="71034" />
           <property role="1dtHnI" value="Böblingen" />
+          <property role="1dtHnq" value="Schömberger Straße 19" />
         </node>
       </node>
     </node>
     <node concept="kiEkE" id="6Ig1BhZUo5q" role="kiJEa">
       <property role="kiJMy" value="Sascha Lisson" />
-      <node concept="1dj1mE" id="5fk$COuAofV" role="kiJHN" />
+      <node concept="1dj1mE" id="5fk$COuAofV" role="kiJHN">
+        <node concept="kiJMF" id="5fk$COuNhvm" role="1dj0se" />
+      </node>
     </node>
   </node>
 </model>

@@ -745,13 +745,13 @@
                     <node concept="1pGfFk" id="6Ig1BhZRS47" role="2ShVmc">
                       <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
                       <node concept="3cmrfG" id="6Ig1BhZRS4D" role="37wK5m">
-                        <property role="3cmrfH" value="240" />
+                        <property role="3cmrfH" value="230" />
                       </node>
                       <node concept="3cmrfG" id="6Ig1BhZRS5X" role="37wK5m">
-                        <property role="3cmrfH" value="240" />
+                        <property role="3cmrfH" value="255" />
                       </node>
                       <node concept="3cmrfG" id="6Ig1BhZRSri" role="37wK5m">
-                        <property role="3cmrfH" value="240" />
+                        <property role="3cmrfH" value="200" />
                       </node>
                     </node>
                   </node>

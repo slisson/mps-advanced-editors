@@ -118,7 +118,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
         RoundRectangle2D.Double rr = new RoundRectangle2D.Double(0, labelYCenter, cell.getWidthInt(), cell.getHeightInt() - ListSequence.fromList(childCells).getElement(0).getHeightInt() / 2, shared_radius[0], shared_radius[0]);
 
-        g.setColor(new Color(240, 240, 240));
+        g.setColor(new Color(230, 255, 200));
         g.fill(rr);
 
         g.setStroke(new BasicStroke(2.0f));
