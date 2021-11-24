@@ -23,13 +23,15 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class Address__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, "de.itemis.mps.forms.sandboxlang.structure.Address");
 
   public static final SMethod<String> getTitle_id5fk$COuC_q$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTitle").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5fk$COuC_q$").build();
+  public static final SMethod<Boolean> isActive_id5fk$COuKfsm = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isActive").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5fk$COuKfsm").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTitle_id5fk$COuC_q$);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTitle_id5fk$COuC_q$, isActive_id5fk$COuKfsm);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -40,6 +42,9 @@ public final class Address__BehaviorDescriptor extends BaseBHDescriptor {
       title = "" + (SNodeOperations.getIndexInParent(__thisNode__) + 1);
     }
     return title;
+  }
+  /*package*/ static boolean isActive_id5fk$COuKfsm(@NotNull SNode __thisNode__) {
+    return SNodeOperations.getIndexInParent(__thisNode__) == SPropertyOperations.getInteger(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Addresses$TK, false, false), PROPS.activeTab$kbKK);
   }
 
   /*package*/ Address__BehaviorDescriptor() {
@@ -59,6 +64,8 @@ public final class Address__BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) ((String) getTitle_id5fk$COuC_q$(node));
+      case 1:
+        return (T) ((Boolean) isActive_id5fk$COuKfsm(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -92,5 +99,10 @@ public final class Address__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SProperty name$pBcl = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea24755L, "name");
     /*package*/ static final SProperty postalCode$pIeN = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea2475eL, "postalCode");
     /*package*/ static final SProperty city$pJpS = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea24763L, "city");
+    /*package*/ static final SProperty activeTab$kbKK = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L, 0x53d4928d1ea59e49L, "activeTab");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Addresses$TK = MetaAdapterFactory.getConcept(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L, "de.itemis.mps.forms.sandboxlang.structure.Addresses");
   }
 }

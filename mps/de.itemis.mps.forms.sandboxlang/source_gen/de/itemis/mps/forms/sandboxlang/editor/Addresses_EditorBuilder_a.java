@@ -17,20 +17,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import de.itemis.mps.forms.sandboxlang.behavior.Address__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 /*package*/ class Addresses_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -82,15 +72,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
               tabs.addEditorCell(new CellCreateOperation_a0a0a4a0a0a0a0a0a(ec, address).create());
             }
 
-            EditorCell_Constant addButton = new EditorCell_Constant(ec, myNode, "+");
-            addButton.setAction(CellActionType.CLICK, new AbstractCellAction() {
-              @Override
-              public void execute(EditorContext p1) {
-                SNodeFactoryOperations.addNewChild(myNode, LINKS.addresses$wgM, null);
-              }
-            });
-            addButton.getStyle().set(StyleAttributes.DRAW_BORDER, true);
-            tabs.addEditorCell(addButton);
+            tabs.addEditorCell(new CellCreateOperation_a0a6a0a0a0a0a0a(ec, myNode).create());
 
             SNode activeTab = ListSequence.fromList(SLinkOperations.getChildren(myNode, LINKS.addresses$wgM)).getElement(SPropertyOperations.getInteger(myNode, PROPS.activeTab$kbKK));
             if ((activeTab != null)) {
@@ -123,22 +105,32 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
 
     public EditorCell create() {
-      return createReadOnlyModelAccessor_0();
+      return createComponent_0();
     }
-    private EditorCell createReadOnlyModelAccessor_0() {
-      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor.ReadOnly() {
-        public String getText() {
-          return (String) Address__BehaviorDescriptor.getTitle_id5fk$COuC_q$.invoke(SNodeOperations.cast(myNode, CONCEPTS.Address$3m));
-        }
-      }, myNode);
-      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-      editorCell.setCellId("ReadOnlyModelAccessor_qkscxh_a0a0a0a0e0a0a0a0a0a0");
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.EDITABLE, false);
-      editorCell.getStyle().putAll(style);
-      am_AddressTabHeader.setCellActions(editorCell, myNode, getEditorContext());
+    private EditorCell createComponent_0() {
+      EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "de.itemis.mps.forms.sandboxlang.editor.AddressTabHeader");
+      return editorCell;
+    }
+  }
+  public static class CellCreateOperation_a0a6a0a0a0a0a0a extends AbstractEditorBuilder {
+    private SNode myNode;
+
+    public CellCreateOperation_a0a6a0a0a0a0a0a(EditorContext editorContext, SNode node) {
+      super(editorContext);
+      myNode = node;
+    }
+
+    @NotNull
+    @Override
+    public SNode getNode() {
+      return myNode;
+    }
+
+    public EditorCell create() {
+      return createComponent_1();
+    }
+    private EditorCell createComponent_1() {
+      EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "de.itemis.mps.forms.sandboxlang.editor.AddTabButton");
       return editorCell;
     }
   }
@@ -149,9 +141,5 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class PROPS {
     /*package*/ static final SProperty activeTab$kbKK = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L, 0x53d4928d1ea59e49L, "activeTab");
-  }
-
-  private static final class CONCEPTS {
-    /*package*/ static final SConcept Address$3m = MetaAdapterFactory.getConcept(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, "de.itemis.mps.forms.sandboxlang.structure.Address");
   }
 }
