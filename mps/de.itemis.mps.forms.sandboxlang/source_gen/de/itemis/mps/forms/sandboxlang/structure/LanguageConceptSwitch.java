@@ -10,17 +10,19 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int Address = 0;
-  public static final int ChineseAddress = 1;
-  public static final int Customer = 2;
-  public static final int GermanAddress = 3;
-  public static final int Item = 4;
-  public static final int Order = 5;
-  public static final int OrderedItem = 6;
-  public static final int RootNode = 7;
+  public static final int Addresses = 1;
+  public static final int ChineseAddress = 2;
+  public static final int Customer = 3;
+  public static final int GermanAddress = 4;
+  public static final int Item = 5;
+  public static final int Order = 6;
+  public static final int OrderedItem = 7;
+  public static final int RootNode = 8;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x11d2696e04842L, 0x8ea14b4df566b650L);
     builder.put(0x6b9006747fdafadfL, Address);
+    builder.put(0x53d4928d1e988727L, Addresses);
     builder.put(0x6b9006747fdafcfdL, ChineseAddress);
     builder.put(0x6b9006747fdaa35eL, Customer);
     builder.put(0x6b9006747fdafae0L, GermanAddress);

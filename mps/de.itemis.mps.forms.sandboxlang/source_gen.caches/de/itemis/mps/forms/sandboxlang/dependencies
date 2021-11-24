@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="de.itemis.mps.forms.sandboxlang.Language">
+    <classNode dependClassName="de.itemis.mps.forms.sandboxlang.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="de.itemis.mps.forms.sandboxlang.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="de.itemis.mps.forms.sandboxlang.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="de.itemis.mps.forms.sandboxlang.structure.StructureAspectDescriptor" />
@@ -11,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageExtensions" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

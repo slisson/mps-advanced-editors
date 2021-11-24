@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAddress = createDescriptorForAddress();
+  /*package*/ final ConceptDescriptor myConceptAddresses = createDescriptorForAddresses();
   /*package*/ final ConceptDescriptor myConceptChineseAddress = createDescriptorForChineseAddress();
   /*package*/ final ConceptDescriptor myConceptCustomer = createDescriptorForCustomer();
   /*package*/ final ConceptDescriptor myConceptGermanAddress = createDescriptorForGermanAddress();
@@ -35,7 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAddress, myConceptChineseAddress, myConceptCustomer, myConceptGermanAddress, myConceptItem, myConceptOrder, myConceptOrderedItem, myConceptRootNode);
+    return Arrays.asList(myConceptAddress, myConceptAddresses, myConceptChineseAddress, myConceptCustomer, myConceptGermanAddress, myConceptItem, myConceptOrder, myConceptOrderedItem, myConceptRootNode);
   }
 
   @Override
@@ -44,6 +45,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Address:
         return myConceptAddress;
+      case LanguageConceptSwitch.Addresses:
+        return myConceptAddresses;
       case LanguageConceptSwitch.ChineseAddress:
         return myConceptChineseAddress;
       case LanguageConceptSwitch.Customer:
@@ -73,6 +76,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:5402f374-ee0e-498d-a191-393422757e74(de.itemis.mps.forms.sandboxlang.structure)/7750702056135654111");
     b.version(2);
+    b.property("name", 0x53d4928d1ea24755L).type(PrimitiveTypeId.STRING).origin("6040614135012673365").done();
+    b.property("line1", 0x53d4928d1ea24757L).type(PrimitiveTypeId.STRING).origin("6040614135012673367").done();
+    b.property("line2", 0x53d4928d1ea2475aL).type(PrimitiveTypeId.STRING).origin("6040614135012673370").done();
+    b.property("postalCode", 0x53d4928d1ea2475eL).type(PrimitiveTypeId.STRING).origin("6040614135012673374").done();
+    b.property("city", 0x53d4928d1ea24763L).type(PrimitiveTypeId.STRING).origin("6040614135012673379").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForAddresses() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("de.itemis.mps.forms.sandboxlang", "Addresses", 0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L);
+    b.class_(false, false, false);
+    b.origin("r:5402f374-ee0e-498d-a191-393422757e74(de.itemis.mps.forms.sandboxlang.structure)/6040614135012034343");
+    b.version(2);
+    b.property("activeTab", 0x53d4928d1ea59e49L).type(PrimitiveTypeId.INTEGER).origin("6040614135012892233").done();
+    b.aggregate("addresses", 0x53d4928d1e989583L).target(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL).optional(true).ordered(true).multiple(true).origin("6040614135012038019").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForChineseAddress() {
@@ -90,7 +107,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("name", 0x6b9006747fdafad6L).type(PrimitiveTypeId.STRING).origin("7750702056135654102").done();
     b.property("dateOfBirth", 0x6b9006747fdafad8L).type(PrimitiveTypeId.STRING).origin("7750702056135654104").done();
-    b.aggregate("addresses", 0x6b9006747fdafd07L).target(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL).optional(true).ordered(true).multiple(true).origin("7750702056135654663").done();
+    b.aggregate("addresses", 0x6b9006747fdafd07L).target(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L).optional(false).ordered(true).multiple(false).origin("7750702056135654663").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGermanAddress() {

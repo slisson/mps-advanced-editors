@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="4e64dwdpil93bgtpkg9cmmx5iufjk0h">
-  <files names="Customer_Editor.java:Customer_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:RootNode_Editor.java:RootNode_EditorBuilder_a.java:StyleSheets_StyleSheet.java:TextFieldBuilder.java" />
+<product version="3" modelHash="g5c0v64kvetisy0lg1902yh3e1b51z">
+  <files names="Address_Editor.java:Address_EditorBuilder_a.java:Addresses_Editor.java:Addresses_EditorBuilder_a.java:Customer_Editor.java:Customer_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:RootNode_Editor.java:RootNode_EditorBuilder_a.java:StyleSheets_StyleSheet.java:TextFieldBuilder.java:am_AddressTabHeader.java" />
 </product>
 

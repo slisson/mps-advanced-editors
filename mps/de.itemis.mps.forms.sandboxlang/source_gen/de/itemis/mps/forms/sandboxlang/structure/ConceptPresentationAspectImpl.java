@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Address;
+  private ConceptPresentation props_Addresses;
   private ConceptPresentation props_ChineseAddress;
   private ConceptPresentation props_Customer;
   private ConceptPresentation props_GermanAddress;
@@ -30,6 +31,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Address = cpb.create();
         }
         return props_Address;
+      case LanguageConceptSwitch.Addresses:
+        if (props_Addresses == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Addresses");
+          props_Addresses = cpb.create();
+        }
+        return props_Addresses;
       case LanguageConceptSwitch.ChineseAddress:
         if (props_ChineseAddress == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

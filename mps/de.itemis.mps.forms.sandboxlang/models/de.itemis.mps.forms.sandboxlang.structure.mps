@@ -45,8 +45,8 @@
       <property role="IQ2ns" value="7750702056135654663" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="addresses" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="6Ig1BhZQJFv" resolve="Address" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5fk$COuA8sB" resolve="Addresses" />
     </node>
     <node concept="1TJgyi" id="6Ig1BhZQJFm" role="1TKVEl">
       <property role="IQ2nx" value="7750702056135654102" />
@@ -105,6 +105,31 @@
     <property role="EcuMT" value="7750702056135654111" />
     <property role="TrG5h" value="Address" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5fk$COuC$tl" role="1TKVEl">
+      <property role="IQ2nx" value="6040614135012673365" />
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5fk$COuC$tn" role="1TKVEl">
+      <property role="IQ2nx" value="6040614135012673367" />
+      <property role="TrG5h" value="line1" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5fk$COuC$tq" role="1TKVEl">
+      <property role="IQ2nx" value="6040614135012673370" />
+      <property role="TrG5h" value="line2" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5fk$COuC$tu" role="1TKVEl">
+      <property role="IQ2nx" value="6040614135012673374" />
+      <property role="TrG5h" value="postalCode" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5fk$COuC$tz" role="1TKVEl">
+      <property role="IQ2nx" value="6040614135012673379" />
+      <property role="TrG5h" value="city" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6Ig1BhZQJFw">
     <property role="EcuMT" value="7750702056135654112" />
@@ -115,6 +140,23 @@
     <property role="EcuMT" value="7750702056135654653" />
     <property role="TrG5h" value="ChineseAddress" />
     <ref role="1TJDcQ" node="6Ig1BhZQJFv" resolve="Address" />
+  </node>
+  <node concept="1TIwiD" id="5fk$COuA8sB">
+    <property role="EcuMT" value="6040614135012034343" />
+    <property role="TrG5h" value="Addresses" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5fk$COuDpT9" role="1TKVEl">
+      <property role="IQ2nx" value="6040614135012892233" />
+      <property role="TrG5h" value="activeTab" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="5fk$COuA9m3" role="1TKVEi">
+      <property role="IQ2ns" value="6040614135012038019" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="addresses" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6Ig1BhZQJFv" resolve="Address" />
+    </node>
   </node>
 </model>
 
