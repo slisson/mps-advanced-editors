@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/de.itemis.mps.forms.sandbox/de.itemis.mps.forms.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/de.itemis.mps.forms.sandboxlang/de.itemis.mps.forms.sandboxlang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/de.itemis.mps.forms/de.itemis.mps.forms.mpl" folder="" />
+    </projectModules>
+  </component>
+</project>
