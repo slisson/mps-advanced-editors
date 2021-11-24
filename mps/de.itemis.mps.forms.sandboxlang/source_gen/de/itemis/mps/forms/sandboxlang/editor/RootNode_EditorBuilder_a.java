@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.RenderingHints;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.BasicStroke;
+import java.awt.geom.Rectangle2D;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -113,23 +114,25 @@ import org.jetbrains.mps.openapi.language.SConcept;
           symbol.paint(g2);
           g2.dispose();
         }
-        RoundRectangle2D.Double rr = new RoundRectangle2D.Double(0, 0, cell.getWidthInt(), cell.getHeightInt(), shared_radius[0], shared_radius[0]);
+        int labelYCenter = ListSequence.fromList(childCells).getElement(0).getYInt() + ListSequence.fromList(childCells).getElement(0).getHeightInt() / 2;
+
+        RoundRectangle2D.Double rr = new RoundRectangle2D.Double(0, labelYCenter, cell.getWidthInt(), cell.getHeightInt() - ListSequence.fromList(childCells).getElement(0).getHeightInt() / 2, shared_radius[0], shared_radius[0]);
 
         g.setColor(new Color(240, 240, 240));
         g.fill(rr);
 
-        Graphics2D g2 = ((Graphics2D) g.create());
-        try {
-          g2.clipRect(0, 0, cell.getWidthInt(), ListSequence.fromList(childCells).getElement(0).getHeightInt() + shared_padding[0] / 2);
-          g2.setColor(new Color(100, 100, 100));
-          g2.fill(rr);
-        } finally {
-          g2.dispose();
-        }
-
-        g.setColor(new Color(50, 50, 50));
         g.setStroke(new BasicStroke(2.0f));
+        g.setColor(new Color(50, 50, 50));
         g.draw(rr);
+
+        Rectangle2D labelBounds = ListSequence.fromList(childCells).getElement(0).getBounds();
+        labelBounds = new Rectangle2D.Double(labelBounds.getX() - 6, labelBounds.getY(), labelBounds.getWidth() + 12, labelBounds.getHeight() + 3);
+        g.setColor(new Color(100, 100, 100));
+        g.fill(labelBounds);
+
+        g.setStroke(new BasicStroke(2.0f));
+        g.setColor(new Color(50, 50, 50));
+        g.draw(labelBounds);
       }
       @Override
       protected void init(SNode node, List<MathLayoutableCell> childCells, MathLayoutableCell cell, List<IMathSymbol> symbols) {
@@ -158,6 +161,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setCellId("Constant_wpbi84_a0a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_FAMILY, "Arial");
+    style.set(StyleAttributes.FONT_SIZE, 18);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.WHITE));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

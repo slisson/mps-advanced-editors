@@ -96,6 +96,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics2D" />
     <classNode dependClassName="java.awt.RenderingHints" />
+    <classNode dependClassName="java.awt.geom.Rectangle2D" />
     <classNode dependClassName="java.awt.geom.RoundRectangle2D" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Math" />

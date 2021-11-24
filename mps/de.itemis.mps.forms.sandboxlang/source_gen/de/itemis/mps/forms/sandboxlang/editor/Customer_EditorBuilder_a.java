@@ -187,7 +187,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createCollection_2());
     editorCell.addEditorCell(createConstant_2());
     editorCell.addEditorCell(createCollection_3());
-    editorCell.addEditorCell(createCollection_4());
+    editorCell.addEditorCell(createCollection_5());
     return editorCell;
   }
   private EditorCell createCollection_2() {
@@ -311,7 +311,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
           symbol.paint(g2);
           g2.dispose();
         }
-        RoundRectangle2D.Double rr = new RoundRectangle2D.Double(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight(), 3, 3);
+        RoundRectangle2D.Double rr = new RoundRectangle2D.Double(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight(), 5, 5);
 
         g.setColor(Color.WHITE);
         g.fill(rr);
@@ -329,7 +329,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     Style style = new StyleImpl();
     style.set(StyleAttributes.getInstance().<Boolean>getAttribute("de.itemis.mps.editor.math", "side-tranformation-helper-cells"), _StyleParameter_QueryFunction_sygm7r_a0b2a1a0());
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createCollection_4());
     editorCell.init();
     return editorCell;
   }
@@ -338,6 +338,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private boolean _StyleParameter_QueryFunction_sygm7r_a0b2a1a0() {
     return false;
+  }
+  private EditorCell createCollection_4() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    editorCell.setCellId("Collection_sygm7r_a0b2a1a0");
+    editorCell.addEditorCell(createProperty_1());
+    return editorCell;
   }
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
@@ -364,7 +370,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_4() {
+  private EditorCell createCollection_5() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_sygm7r_d0b0a");
     Style style = new StyleImpl();
