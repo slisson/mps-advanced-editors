@@ -41,6 +41,8 @@ public final class Address__BehaviorDescriptor extends BaseBHDescriptor {
     if ((title == null || title.length() == 0)) {
       title = "" + (SNodeOperations.getIndexInParent(__thisNode__) + 1);
     }
+    SPropertyOperations.getString(__thisNode__, PROPS.line1$pBEn);
+    SPropertyOperations.getString(__thisNode__, PROPS.line2$pHiJ);
     return title;
   }
   /*package*/ static boolean isActive_id5fk$COuKfsm(@NotNull SNode __thisNode__) {
@@ -99,6 +101,8 @@ public final class Address__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SProperty name$pBcl = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea24755L, "name");
     /*package*/ static final SProperty postalCode$pIeN = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea2475eL, "postalCode");
     /*package*/ static final SProperty city$pJpS = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea24763L, "city");
+    /*package*/ static final SProperty line1$pBEn = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea24757L, "line1");
+    /*package*/ static final SProperty line2$pHiJ = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x6b9006747fdafadfL, 0x53d4928d1ea2475aL, "line2");
     /*package*/ static final SProperty activeTab$kbKK = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L, 0x53d4928d1ea59e49L, "activeTab");
   }
 

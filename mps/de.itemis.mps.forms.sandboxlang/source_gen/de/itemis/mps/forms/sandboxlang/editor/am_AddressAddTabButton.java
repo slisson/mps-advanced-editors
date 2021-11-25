@@ -6,6 +6,9 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -13,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class am_AddressAddTabButton {
 
@@ -23,6 +27,7 @@ public class am_AddressAddTabButton {
       }
       public void execute_internal(EditorContext editorContext, SNode node) {
         SNodeFactoryOperations.addNewChild(node, LINKS.addresses$wgM, null);
+        SPropertyOperations.assign(node, PROPS.activeTab$kbKK, ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.addresses$wgM)).count() - 1);
       }
 
     };
@@ -71,5 +76,9 @@ public class am_AddressAddTabButton {
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink addresses$wgM = MetaAdapterFactory.getContainmentLink(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L, 0x53d4928d1e989583L, "addresses");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty activeTab$kbKK = MetaAdapterFactory.getProperty(0x11d2696e04842L, 0x8ea14b4df566b650L, 0x53d4928d1e988727L, 0x53d4928d1ea59e49L, "activeTab");
   }
 }
