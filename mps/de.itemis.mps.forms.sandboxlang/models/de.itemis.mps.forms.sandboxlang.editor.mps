@@ -2703,6 +2703,9 @@
               </node>
             </node>
           </node>
+          <node concept="2biZxu" id="5fk$COuVWcX" role="3F10Kt">
+            <property role="1rj3mz" value="Arial" />
+          </node>
         </node>
       </node>
       <node concept="2qw2Hp" id="5fk$COuIVHk" role="2qw2Hu">

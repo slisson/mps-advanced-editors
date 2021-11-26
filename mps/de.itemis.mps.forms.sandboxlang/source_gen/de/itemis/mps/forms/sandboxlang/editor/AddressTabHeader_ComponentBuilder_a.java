@@ -122,6 +122,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_8gxabr_a0a");
     Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Arial");
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     am_AddressTabHeader.setCellActions(editorCell, myNode, getEditorContext());
